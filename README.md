@@ -1,8 +1,6 @@
-# Meteor Addon Template
+<p align="center">
+    <img style="height: 200px" src="src/main/resources/assets/reich/icon.png" />
+</p>
 
-A template to allow easy usage of the Meteor Addon API.
-
-### How to use:  
-- Clone this project
-- Use this template to create new modules/commands
-- Run the mod with Meteor.
+<h1 align="center">Reich Crasher</h1>
+<p align="center">Crasher Addon For Meteor</p>

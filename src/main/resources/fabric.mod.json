@@ -1,31 +1,33 @@
 {
   "schemaVersion": 1,
-  "id": "addon-template",
-  "version": "${version}",
-  "name": "Addon Template",
-  "description": "An addon template for the Meteor addons.",
+  "id": "reich-crash",
+  "version": "1.0.0-Alpha",
+  "name": "Reich Crash",
+  "description": "Crash Addon For Meteor",
   "authors": [
-    "seasnail"
+    "carrot0322"
   ],
   "contact": {
-    "repo": "https://github.com/MeteorDevelopment/meteor-addon-template"
+    "repo": "https://github.com/carrot0322/ReichCrasher"
   },
-  "icon": "assets/template/icon.png",
+  "icon": "assets/reich/icon.png",
   "environment": "client",
   "entrypoints": {
     "meteor": [
-      "com.example.addon.Addon"
+      "me.reich.crash.Crash"
     ]
   },
-  "mixins": [
-    "addon-template.mixins.json"
-  ],
   "custom": {
-    "meteor-client:color": "225,25,25"
+    "meteor-client:color": "221,0,0",
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/YV9TKpXeK2"
+      }
+    }
   },
   "depends": {
     "java": ">=17",
-    "minecraft": ">=${mc_version}",
+    "minecraft": ">=1.20.1",
     "meteor-client": "*"
   }
 }
