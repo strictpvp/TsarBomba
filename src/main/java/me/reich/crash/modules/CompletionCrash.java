@@ -49,7 +49,7 @@ public class CompletionCrash extends Module {
     );
 
     public CompletionCrash() {
-        super(Crash.CATEGORY, "Liquid(Completion) Crash", "");
+        super(Crash.CATEGORY, "Reich Crash", "command completion crash");
     }
 
     private int messageIndex = 0;
