@@ -19,9 +19,9 @@ public class Crash extends MeteorAddon {
     @Override
     public void onInitialize() {
         LOG.info("[{}] Initializing Reich Crash for Meteor", NAME);
-        LOG.info("[{}] Checking Hwid", NAME);
 
-        /*if (!Hwid.CheckHWID()) {
+        /*LOG.info("[{}] Checking Hwid", NAME);
+        if (!Hwid.CheckHWID()) {
             LOG.warn("[{}] Invalid HWID", NAME);
             LOG.warn("[{}] Your HWID is : " + Hwid.GetHWID(), NAME);
             LOG.warn("[{}] Dm to (Discord)c_arrot_ with your hwid", NAME);
@@ -30,12 +30,6 @@ public class Crash extends MeteorAddon {
 
         // Modules
         Modules.get().add(new CompletionCrash());
-
-        // Commands
-        //Commands.add(new CommandExample());
-
-        // HUD
-        //Hud.get().register(HudExample.INFO);
     }
 
     @Override
