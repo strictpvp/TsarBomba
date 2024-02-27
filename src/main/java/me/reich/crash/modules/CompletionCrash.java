@@ -32,7 +32,7 @@ public class CompletionCrash extends Module {
         .name("Length")
         .description("Command Length")
         .defaultValue(2005)
-        .sliderRange(1000, 50000)
+        .sliderRange(500, 50000)
         .build());
 
     private final Setting<Boolean> autoDisable = sgGeneral.add(new BoolSetting.Builder()
