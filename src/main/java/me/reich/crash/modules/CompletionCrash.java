@@ -89,7 +89,7 @@ public class CompletionCrash extends Module {
     private void onGameLeft(GameLeftEvent event) {
         if (autoDisable.get()) toggle();
     }
-    
+
     private String generateJsonObject(int levels) {
         StringBuilder builder = new StringBuilder("{a:");
         for (int i = 0; i < levels; i++) {
@@ -98,6 +98,5 @@ public class CompletionCrash extends Module {
         builder.append("}");
         return builder.toString();
     }
-
 }
 
