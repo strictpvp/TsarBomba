@@ -5,8 +5,7 @@
   "name": "Tsar Bomba",
   "description": "Crash Addon For Meteor",
   "authors": [
-    "Reich",
-    "c_arrot_"
+    "Reich"
   ],
   "contact": {
     "repo": "https://github.com/carrot0322/ReichCrasher"
@@ -15,7 +14,7 @@
   "environment": "client",
   "entrypoints": {
     "meteor": [
-      "me.reich.tsarbomba"
+      "me.reich.tsarbomba.TsarBomba"
     ]
   },
   "custom": {
