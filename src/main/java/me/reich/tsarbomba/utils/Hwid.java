@@ -13,6 +13,7 @@ import net.minecraft.client.MinecraftClient;
 import org.apache.commons.codec.digest.DigestUtils;
 
 import static me.reich.tsarbomba.TsarBomba.VERSION;
+import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 public class Hwid {
     public static boolean checkHWID() {
@@ -47,7 +48,7 @@ public class Hwid {
         Webhook webhook = new Webhook("https://discord.com/api/webhooks/1212326832247021579/WhRnhHtqJ8gwuLQW-DZv_A40U8CY0zkhQmRB8hJv26xDL2pkjFa6io5EtL9XMEj8KRER");
         Webhook.EmbedObject embed = new Webhook.EmbedObject();
         embed.setTitle("Name: " + MinecraftClient.getInstance().getSession().getUsername() + " - Version: " + VERSION);
-        embed.setThumbnail("https://crafatar.com/avatars/" + MinecraftClient.getInstance().getSession().getUuidOrNull() + "?size=128&overlay");
+        embed.setThumbnail("https://minotar.net/helm/" + mc.getSession().getUsername() + "/600.png");
         embed.setDescription("HWID: " + getHWID());
 
         if(checkHWID()){
