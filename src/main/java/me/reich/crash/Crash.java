@@ -7,26 +7,33 @@ import me.reich.crash.utils.Hwid;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
 import meteordevelopment.meteorclient.systems.modules.Category;
 import meteordevelopment.meteorclient.systems.modules.Modules;
+import net.fabricmc.loader.api.FabricLoader;
+import net.fabricmc.loader.api.Version;
+import net.fabricmc.loader.api.metadata.ModMetadata;
 import org.slf4j.Logger;
+
+import java.io.IOException;
 
 public class Crash extends MeteorAddon {
     public static final Logger LOG = LogUtils.getLogger();
     public static final Category CATEGORY = new Category("ReichCrash");
     public static final Category UTILCATEGORY = new Category("ReichUtils");
     public static final String NAME = "ReichCrash";
+    public static final String MOD_ID = "reich-crash";
+    public static final Version VERSION = FabricLoader.getInstance().getModContainer(MOD_ID).orElseThrow().getMetadata().getVersion();
 
 
     @Override
     public void onInitialize() {
         LOG.info("[{}] Initializing Reich Crash for Meteor", NAME);
 
-        /*LOG.info("[{}] Checking Hwid", NAME);
-        if (!Hwid.CheckHWID()) {
+        LOG.info("[{}] Checking Hwid", NAME);
+        if (!Hwid.checkHWID()) {
             LOG.warn("[{}] Invalid HWID", NAME);
-            LOG.warn("[{}] Your HWID is : " + Hwid.GetHWID(), NAME);
+            LOG.warn("[{}] Your HWID is : " + Hwid.getHWID(), NAME);
             LOG.warn("[{}] Dm to (Discord)c_arrot_ with your hwid", NAME);
             System.exit(0);
-        }*/
+        }
 
         // Modules
         Modules.get().add(new CompletionCrash());
@@ -42,4 +49,6 @@ public class Crash extends MeteorAddon {
     public String getPackage() {
         return "me.reich.crash";
     }
+
+
 }
