@@ -68,13 +68,12 @@ public class CompletionCrash extends Module {
     }
 
     @EventHandler
-    public void onTick(TickEvent.Pre tickEvent) throws InterruptedException {
+    public void onTick(TickEvent.Pre tickEvent) {
         if(messageIndex == knownWorkingMessages.length - 1) {
             if(isActive()) toggle();
             messageIndex = 0;
             return;
         }
-        Thread.sleep(1000);
         String knownMessage = knownWorkingMessages[messageIndex] + nbtExecutor;
         int len = 2044 - knownMessage.length();
         String overflow = generateJsonObject(len);

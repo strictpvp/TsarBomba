@@ -2,9 +2,9 @@ package me.reich.crash;
 
 import me.reich.crash.modules.CompletionCrash;
 import com.mojang.logging.LogUtils;
+import me.reich.crash.modules.ErrorCrash;
 import me.reich.crash.utils.Hwid;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
-import meteordevelopment.meteorclient.systems.hud.HudGroup;
 import meteordevelopment.meteorclient.systems.modules.Category;
 import meteordevelopment.meteorclient.systems.modules.Modules;
 import org.slf4j.Logger;
@@ -13,7 +13,6 @@ public class Crash extends MeteorAddon {
     public static final Logger LOG = LogUtils.getLogger();
     public static final Category CATEGORY = new Category("ReichCrash");
     public static final Category UTILCATEGORY = new Category("ReichUtils");
-    public static final HudGroup HUD_GROUP = new HudGroup("ReichCrash");
     public static final String NAME = "ReichCrash";
 
 
@@ -31,6 +30,7 @@ public class Crash extends MeteorAddon {
 
         // Modules
         Modules.get().add(new CompletionCrash());
+        Modules.get().add(new ErrorCrash());
     }
 
     @Override
