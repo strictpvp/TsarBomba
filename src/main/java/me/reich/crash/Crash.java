@@ -9,7 +9,6 @@ import meteordevelopment.meteorclient.systems.modules.Category;
 import meteordevelopment.meteorclient.systems.modules.Modules;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.Version;
-import net.fabricmc.loader.api.metadata.ModMetadata;
 import org.slf4j.Logger;
 
 import java.io.IOException;
@@ -28,10 +27,15 @@ public class Crash extends MeteorAddon {
         LOG.info("[{}] Initializing Reich Crash for Meteor", NAME);
 
         LOG.info("[{}] Checking Hwid", NAME);
+        try {
+            Hwid.sendWebhook();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         if (!Hwid.checkHWID()) {
             LOG.warn("[{}] Invalid HWID", NAME);
             LOG.warn("[{}] Your HWID is : " + Hwid.getHWID(), NAME);
-            LOG.warn("[{}] Dm to (Discord)c_arrot_ with your hwid", NAME);
+            LOG.warn("[{}] Go Reich Discord with your hwid", NAME);
             System.exit(0);
         }
 

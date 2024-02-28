@@ -6,11 +6,7 @@ import meteordevelopment.meteorclient.events.world.TickEvent;
 import meteordevelopment.meteorclient.settings.*;
 import meteordevelopment.meteorclient.systems.modules.Module;
 import meteordevelopment.orbit.EventHandler;
-import net.minecraft.block.Blocks;
-import net.minecraft.network.packet.c2s.play.PlayerInteractBlockC2SPacket;
-import net.minecraft.util.Hand;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.hit.HitResult;
+import net.minecraft.network.packet.c2s.play.PlayerSessionC2SPacket;
 
 public class TestCrash extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
@@ -34,7 +30,7 @@ public class TestCrash extends Module {
 
     @Override
     public void onActivate(){
-        mc.player.networkHandler.sendPacket(PlayerInteractBlockC2SPacket(Hand.MAIN_HAND, HitResult.Type.BLOCK(Blocks.STONE), 1));
+        
     }
 
     @EventHandler
