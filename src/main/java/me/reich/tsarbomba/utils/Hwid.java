@@ -4,6 +4,7 @@ import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.text.SimpleDateFormat;
@@ -19,19 +20,23 @@ public class Hwid {
     public static boolean checkHWID() {
         String hwid = getHWID();
         try {
-            URL url = new URL("https://pastebin.com/raw/gvCFjrBf");
-            URLConnection conn = url.openConnection();
+            URL url = new URL("http://121.254.171.162:20772/hwid/" + hwid);
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            conn.setDoOutput(true);
+
             BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-            String line;
-            while ((line = reader.readLine()) != null) {
-                if (line.contains(hwid)) {
-                    return true;
-                }
+            String response = reader.readLine();
+
+            if (response.equalsIgnoreCase("True")) {
+                return true;
+            } else {
+                return false;
             }
         } catch (IOException e) {
             e.printStackTrace();
+            return false;
         }
-        return false;
     }
 
     public static String getHWID() {
