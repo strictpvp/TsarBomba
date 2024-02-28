@@ -1,7 +1,7 @@
-package me.reich.crash.modules;
+package me.reich.tsarbomba.modules;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectArrayMap;
-import me.reich.crash.Crash;
+import me.reich.tsarbomba.TsarBomba;
 import meteordevelopment.meteorclient.events.game.GameLeftEvent;
 import meteordevelopment.meteorclient.events.world.TickEvent;
 import meteordevelopment.meteorclient.settings.*;
@@ -29,7 +29,7 @@ public class ErrorCrash extends Module {
         .build());
 
     public ErrorCrash() {
-        super(Crash.CATEGORY, "Paper Error Crash", "works on 1.19.4~1.20.2");
+        super(TsarBomba.CATEGORY, "Paper Error Crash", "works on 1.19.4~1.20.2");
     }
 
     @EventHandler

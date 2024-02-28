@@ -1,4 +1,4 @@
-package me.reich.crash.utils;
+package me.reich.tsarbomba.utils;
 
 import java.awt.*;
 import java.io.BufferedReader;
@@ -12,7 +12,7 @@ import java.util.Date;
 import net.minecraft.client.MinecraftClient;
 import org.apache.commons.codec.digest.DigestUtils;
 
-import static me.reich.crash.Crash.VERSION;
+import static me.reich.tsarbomba.TsarBomba.VERSION;
 
 public class Hwid {
     public static boolean checkHWID() {

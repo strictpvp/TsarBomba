@@ -1,6 +1,6 @@
-package me.reich.crash.modules;
+package me.reich.tsarbomba.modules;
 
-import me.reich.crash.Crash;
+import me.reich.tsarbomba.TsarBomba;
 import meteordevelopment.meteorclient.events.game.GameLeftEvent;
 import meteordevelopment.meteorclient.events.world.TickEvent;
 import meteordevelopment.meteorclient.settings.*;
@@ -39,7 +39,7 @@ public class CompletionCrash extends Module {
     );
 
     public CompletionCrash() {
-        super(Crash.CATEGORY, "Completion Crash", "command completion crash");
+        super(TsarBomba.CATEGORY, "Completion Crash", "command completion crash");
     }
 
     private int messageIndex = 0;

@@ -1,12 +1,11 @@
-package me.reich.crash.modules;
+package me.reich.tsarbomba.modules;
 
-import me.reich.crash.Crash;
+import me.reich.tsarbomba.TsarBomba;
 import meteordevelopment.meteorclient.events.game.GameLeftEvent;
 import meteordevelopment.meteorclient.events.world.TickEvent;
 import meteordevelopment.meteorclient.settings.*;
 import meteordevelopment.meteorclient.systems.modules.Module;
 import meteordevelopment.orbit.EventHandler;
-import net.minecraft.network.packet.c2s.play.PlayerSessionC2SPacket;
 
 public class TestCrash extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
@@ -25,12 +24,12 @@ public class TestCrash extends Module {
         .build());
 
     public TestCrash() {
-        super(Crash.CATEGORY, "TestModule", "idk Im finding fucking crash module 😎");
+        super(TsarBomba.CATEGORY, "TestModule", "idk Im finding fucking crash module 😎");
     }
 
     @Override
     public void onActivate(){
-        
+
     }
 
     @EventHandler

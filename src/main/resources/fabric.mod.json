@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "reich-crash",
+  "id": "tsar-bomba",
   "version": "${version}",
-  "name": "Reich Crash",
+  "name": "Tsar Bomba",
   "description": "Crash Addon For Meteor",
   "authors": [
     "Reich",
@@ -15,14 +15,14 @@
   "environment": "client",
   "entrypoints": {
     "meteor": [
-      "me.reich.crash.Crash"
+      "me.reich.tsarbomba"
     ]
   },
   "custom": {
     "meteor-client:color": "221,0,0",
     "modmenu": {
       "links": {
-        "modmenu.discord": "https://discord.gg/YV9TKpXeK2"
+        "modmenu.discord": "https://discord.gg/griefer"
       }
     }
   },

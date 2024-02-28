@@ -1,4 +1,4 @@
-package me.reich.crash.utils;
+package me.reich.tsarbomba.utils;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.awt.*;
