@@ -1,4 +1,4 @@
-package me.reich.tsarbomba.modules;
+package me.reich.tsarbomba.modules.crash;
 
 import me.reich.tsarbomba.TsarBomba;
 import meteordevelopment.meteorclient.events.game.GameLeftEvent;

