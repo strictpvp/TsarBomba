@@ -52,7 +52,7 @@ public class Plugins extends Module {
             mc.getNetworkHandler().sendPacket(new RequestCommandCompletionsC2SPacket(0, "/"));
     }
 
-    @EventHandler
+    /*@EventHandler
     public void onPacketReceived(PacketEvent event) {
         Packet<?> packet = event.getPacket();
 
@@ -69,7 +69,7 @@ public class Plugins extends Module {
 
             takePluginInput(plugins);
         }
-    }
+    }*/
 
     public static boolean contains(String[] arr, String value) {
         return Arrays.asList(arr).contains(value);

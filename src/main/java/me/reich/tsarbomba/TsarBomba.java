@@ -44,7 +44,7 @@ public class TsarBomba extends MeteorAddon {
         Modules.get().add(new CompletionCrash());
         Modules.get().add(new ErrorCrash());
         // Util
-        Modules.get().add(new Plugins());
+        //Modules.get().add(new Plugins());
     }
 
     @Override
