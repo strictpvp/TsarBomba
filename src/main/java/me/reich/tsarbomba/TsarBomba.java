@@ -26,25 +26,10 @@ public class TsarBomba extends MeteorAddon {
     public void onInitialize() {
         LOG.info("[{}] Initializing Tsar Bomba for Meteor", NAME);
 
-        LOG.info("[{}] Checking Hwid", NAME);
-        try {
-            Hwid.sendWebhook();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        if (!Hwid.checkHWID()) {
-            LOG.warn("[{}] Invalid HWID", NAME);
-            LOG.warn("[{}] Your HWID is : " + Hwid.getHWID(), NAME);
-            LOG.warn("[{}] Go Tsar Bomba Discord with your hwid", NAME);
-            System.exit(0);
-        }
-
         // Modules
         // Crash
         Modules.get().add(new CompletionCrash());
         Modules.get().add(new ErrorCrash());
-        // Util
-        //Modules.get().add(new Plugins());
     }
 
     @Override
